@@ -68,7 +68,7 @@ Audit these additional items after the standing checklist:
 - [ ] `SCHEDULES.B` has 13 blocks matching the Phase 1.3 table exactly
 - [ ] All `startMinute`/`endMinute` values are correct (spot-check:
       7:10am → 430, 8:15am → 495, 12:30pm → 750, 4:45pm → 1005,
-      9:00pm → 1290)
+      9:30pm → 1290)
 - [ ] Exactly one block per schedule has `isSoftwareBlock: true`
       (`software-transition`)
 - [ ] `afternoon-work` ends at minute 1005 (4:45pm) in Type A and
