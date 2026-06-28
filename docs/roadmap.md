@@ -20,8 +20,8 @@ standards, architecture rules, and the schedule model, see `CLAUDE.md`.
 
 ## Current Status
 
-**Active phase:** Phase 1 — Foundation 🔄
-**Tests passing:** 0 (no tests yet; Phase 1.5 will add them)
+**Active phase:** Phase 2 — Core UI ⬜
+**Tests passing:** 36 (Phase 1 lib functions)
 **Known constraints:** Vitest 3.x required (2.x bundles Vite 5, conflicting with top-level Vite 6)
 
 ---
@@ -41,6 +41,9 @@ CLAUDE.md
 ---
 
 ## Phase History
+
+### Phase 1 — Foundation ✅
+All 5 sub-tasks complete. 36 tests passing. CI green. Vercel live.
 
 ### Phase 0 — Project Setup ✅
 Produced `CLAUDE.md`, `roadmap.md`, `docs/audit-prompt.md`,
@@ -91,7 +94,7 @@ Vitest, and Vercel deployment configured.
 - [x] `npm run lint` passes
 - [x] `npm run test` runs (0 tests, no failures)
 - [x] Pushing to `main` triggers CI and all jobs pass
-- [ ] Vercel preview deployment succeeds
+- [x] Vercel preview deployment succeeds
 
 ---
 
