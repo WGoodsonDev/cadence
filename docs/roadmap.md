@@ -90,7 +90,7 @@ Vitest, and Vercel deployment configured.
 - [x] `npm run typecheck` passes
 - [x] `npm run lint` passes
 - [x] `npm run test` runs (0 tests, no failures)
-- [ ] Pushing to `main` triggers CI and all jobs pass
+- [x] Pushing to `main` triggers CI and all jobs pass
 - [ ] Vercel preview deployment succeeds
 
 ---
