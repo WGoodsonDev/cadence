@@ -6,6 +6,7 @@ export const ROTATION_TARGETS = {
 export const STORAGE_KEYS = {
   dayType: 'cadence-day-type',
   blockLog: 'cadence-block-log',
+  theme: 'cadence-theme',
   rotation: (weekKey: string) => `cadence-rotation-${weekKey}`,
 } as const
 
