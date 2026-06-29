@@ -20,8 +20,8 @@ standards, architecture rules, and the schedule model, see `CLAUDE.md`.
 
 ## Current Status
 
-**Active phase:** Phase 2 — Core UI ⬜
-**Tests passing:** 36 (Phase 1 lib functions)
+**Active phase:** Phase 3 — Rotation Tracker ⬜
+**Tests passing:** 58 (Phase 1 lib + Phase 2 hooks)
 **Known constraints:** Vitest 3.x required (2.x bundles Vite 5, conflicting with top-level Vite 6)
 
 ---
@@ -41,6 +41,9 @@ CLAUDE.md
 ---
 
 ## Phase History
+
+### Phase 2 — Core UI ✅
+All components and hooks complete. 58 tests passing. Audit clean. Vercel live.
 
 ### Phase 1 — Foundation ✅
 All 5 sub-tasks complete. 36 tests passing. CI green. Vercel live.
@@ -363,7 +366,7 @@ use real browser storage.
 
 ---
 
-## Phase 2 — Core UI ⬜
+## Phase 2 — Core UI ✅
 
 ### Goal
 Build the primary dashboard: current block display, next block preview,
