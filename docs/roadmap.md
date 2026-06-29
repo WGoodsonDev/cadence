@@ -20,8 +20,8 @@ standards, architecture rules, and the schedule model, see `CLAUDE.md`.
 
 ## Current Status
 
-**Active phase:** Phase 3 — Rotation Tracker ⬜
-**Tests passing:** 58 (Phase 1 lib + Phase 2 hooks)
+**Active phase:** Phase 4 — Weekly Review ⬜
+**Tests passing:** 72 (Phase 1 lib + Phase 2–3 hooks)
 **Known constraints:** Vitest 3.x required (2.x bundles Vite 5, conflicting with top-level Vite 6)
 
 ---
@@ -41,6 +41,9 @@ CLAUDE.md
 ---
 
 ## Phase History
+
+### Phase 3 — Rotation Tracker ✅
+All components and hooks complete. 72 tests passing. Audit clean. Vercel live.
 
 ### Phase 2 — Core UI ✅
 All components and hooks complete. 58 tests passing. Audit clean. Vercel live.
@@ -394,7 +397,7 @@ thing that gets opened every morning.
 
 ---
 
-## Phase 3 — Rotation Tracker ⬜
+## Phase 3 — Rotation Tracker ✅
 
 ### Goal
 Add the software transition rotation tracker: log each morning's session
