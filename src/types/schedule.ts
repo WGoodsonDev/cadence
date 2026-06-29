@@ -38,4 +38,5 @@ export interface ScheduleState {
   nextBlock: Block | null;
   minutesRemaining: number | null;
   blocks: Block[];
+  isSoftwareBlockPast: boolean;
 }

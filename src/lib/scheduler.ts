@@ -29,5 +29,9 @@ export const deriveScheduleState = (
   const minutesRemaining = currentBlock
     ? minutesUntil(currentMinute, currentBlock.endMinute)
     : null
-  return { currentBlock, nextBlock, minutesRemaining, blocks: schedule.blocks }
+  const softwareBlock = schedule.blocks.find(b => b.isSoftwareBlock)
+  const isSoftwareBlockPast = softwareBlock
+    ? currentMinute >= softwareBlock.endMinute
+    : false
+  return { currentBlock, nextBlock, minutesRemaining, blocks: schedule.blocks, isSoftwareBlockPast }
 }

@@ -5,10 +5,12 @@ import { getCurrentBlock, getNextBlock, deriveScheduleState } from '@/lib/schedu
 const blockA: Block = { id: 'block-a', label: 'Block A', startMinute: 420, endMinute: 480, isSoftwareBlock: false }
 const blockB: Block = { id: 'block-b', label: 'Block B', startMinute: 480, endMinute: 540, isSoftwareBlock: false }
 const blockC: Block = { id: 'block-c', label: 'Block C', startMinute: 540, endMinute: 600, isSoftwareBlock: false }
+const softwareBlock: Block = { id: 'software', label: 'Software', startMinute: 430, endMinute: 495, isSoftwareBlock: true }
 
 const blocks: Block[] = [blockA, blockB, blockC]
 
 const testSchedule: DaySchedule = { dayType: 'A', blocks }
+const scheduleWithSoftware: DaySchedule = { dayType: 'A', blocks: [blockA, softwareBlock, blockB] }
 
 const makeDate = (hour: number, minute: number): Date => {
   const d = new Date()
@@ -84,5 +86,27 @@ describe('deriveScheduleState', () => {
   it('includes all blocks in the returned state', () => {
     const state = deriveScheduleState(testSchedule, makeDate(7, 30))
     expect(state.blocks).toBe(testSchedule.blocks)
+  })
+
+  it('isSoftwareBlockPast is false when no software block exists', () => {
+    const state = deriveScheduleState(testSchedule, makeDate(7, 30))
+    expect(state.isSoftwareBlockPast).toBe(false)
+  })
+
+  it('isSoftwareBlockPast is false while software block is active', () => {
+    // software block: 430–495; minute 450 = mid-block
+    const state = deriveScheduleState(scheduleWithSoftware, makeDate(7, 30))
+    expect(state.isSoftwareBlockPast).toBe(false)
+  })
+
+  it('isSoftwareBlockPast is true at the exact end boundary of the software block', () => {
+    // endMinute 495 = 8:15am
+    const state = deriveScheduleState(scheduleWithSoftware, makeDate(8, 15))
+    expect(state.isSoftwareBlockPast).toBe(true)
+  })
+
+  it('isSoftwareBlockPast is true after the software block has ended', () => {
+    const state = deriveScheduleState(scheduleWithSoftware, makeDate(9, 0))
+    expect(state.isSoftwareBlockPast).toBe(true)
   })
 })
