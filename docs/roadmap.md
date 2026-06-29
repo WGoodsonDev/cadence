@@ -20,8 +20,8 @@ standards, architecture rules, and the schedule model, see `CLAUDE.md`.
 
 ## Current Status
 
-**Active phase:** Phase 4 — Weekly Review ⬜
-**Tests passing:** 72 (Phase 1 lib + Phase 2–3 hooks)
+**Active phase:** Phase 5 — Backend Sync ⬜
+**Tests passing:** 86 (Phase 1–4)
 **Known constraints:** Vitest 3.x required (2.x bundles Vite 5, conflicting with top-level Vite 6)
 
 ---
@@ -41,6 +41,9 @@ CLAUDE.md
 ---
 
 ## Phase History
+
+### Phase 4 — Weekly Review ✅
+All lib functions, hook, and component complete. 86 tests passing. Audit clean. Vercel live.
 
 ### Phase 3 — Rotation Tracker ✅
 All components and hooks complete. 72 tests passing. Audit clean. Vercel live.
@@ -415,7 +418,7 @@ and auto-reset on Monday.
 
 ---
 
-## Phase 4 — Weekly Review ⬜
+## Phase 4 — Weekly Review ✅
 
 ### Goal
 Add a lightweight end-of-week view: blocks completed, rotation summary,
